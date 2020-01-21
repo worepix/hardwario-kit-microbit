@@ -17,15 +17,12 @@ class Display:
         display.clear()
 
     def blink(self, times, delay_ms):
-        state = True
-        for _ in range (0, times):
-            if state == True:
+        for x in range (0, times):
+            if x % 2 == 0:
                 self.set_all(9)
-                state = False
                 sleep(delay_ms)
             else:
                 self.set_all(0)
-                state = True
                 sleep(delay_ms)
 
         display.clear()

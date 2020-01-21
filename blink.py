@@ -11,18 +11,15 @@ class Display:
                 display.set_pixel(x, y, value)
 
     def blink(self, times, delay_ms):
-        state = True
-        for _ in range (0, times):
+        for x in range (0, times):
             print('loop')
-            if state == True:
+            if x % 2 == 0:
                 print('State on')
                 self._set_all(9)
-                state = False
                 sleep(delay_ms)
             else:
                 self._set_all(0)
                 print('State off')
-                state = True
                 sleep(delay_ms)
 
         self._set_all(0)
